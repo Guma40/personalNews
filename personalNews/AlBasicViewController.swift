@@ -70,24 +70,13 @@ class AlBasicViewController: UIViewController, UITextFieldDelegate {
 // проверка условий заполнения полей
 // если все ОК - переход на главную страницу
     @IBAction func enterOkButton(_ sender: Any) {
-        let password = (passwordTextField?.text)!
-        let email = (emailTextField?.text)!
-            
-        if email.isEmpty {
-            allertMessage(nummessage: 0, field: emailTextField)
-            return
-        }
-        if password.isEmpty {
-            allertMessage(nummessage: 1, field: passwordTextField)
-            return
-        }
-        if password.count < passLength {
-            allertMessage(nummessage: 3, field: passwordTextField)
-            passwordTextField?.text = ""
-            return
-        }
-        if !email.isValidEmail() {
+    
+        if !(emailTextField?.text?.isValidEmail())! {
             allertMessage(nummessage: 2, field: emailTextField)
+            return
+        }
+        if (passwordTextField?.text?.count)! < passLength {
+            allertMessage(nummessage: 3, field: passwordTextField)
             return
         }
         return
