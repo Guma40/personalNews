@@ -42,12 +42,12 @@ class AlBasicViewController: UIViewController, UITextFieldDelegate {
     
 // убрать выделение при вводе текста
     @IBAction func changeEmailadrress(_ sender: UITextField) {
-        emailTextField.setBorderColor(width: 1.0, color: .gray)
+        sender.setBorderColor(width: 1.0, color: .gray)
         return
     }
     
     @IBAction func changePasswordfield(_ sender: UITextField) {
-        passwordTextField.setBorderColor(width: 1.0, color: .gray)
+        sender.setBorderColor(width: 1.0, color: .gray)
         return
     }
 // скрыть клавиатуру
