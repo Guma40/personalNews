@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AlBasicViewController" customModule="personalNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BasicView" customModule="personalNews" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -39,14 +39,14 @@
                                         <color key="textColor" red="0.1604967521" green="0.083985949360000006" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="examples@mail.net" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxN-Ir-PO3">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="examples@mail.net" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxN-Ir-PO3">
                                         <rect key="frame" x="63" y="280" width="249" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <connections>
-                                            <action selector="changeEmailadrress:" destination="BYZ-38-t0r" eventType="editingChanged" id="kkV-MJ-5Cq"/>
-                                            <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="08U-FD-YaB"/>
+                                            <action selector="changeBorderColorTextField:" destination="8bC-Xf-vdC" eventType="editingChanged" id="6OX-YU-iqk"/>
+                                            <action selector="hideKeyboard:" destination="8bC-Xf-vdC" eventType="editingDidEndOnExit" id="H5H-So-uYh"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-TO-U7O">
@@ -55,14 +55,14 @@
                                         <color key="textColor" red="0.1604967521" green="0.083985949360000006" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zd-10-XJx">
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zd-10-XJx">
                                         <rect key="frame" x="63" y="358" width="249" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="changePasswordfield:" destination="BYZ-38-t0r" eventType="editingChanged" id="qGv-ms-BWv"/>
-                                            <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="JQh-ae-g9h"/>
+                                            <action selector="changeBorderColorTextField:" destination="8bC-Xf-vdC" eventType="editingChanged" id="ikK-0H-0li"/>
+                                            <action selector="hideKeyboard:" destination="8bC-Xf-vdC" eventType="editingDidEndOnExit" id="ET1-5P-JQe"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7y-4P-btu">
@@ -125,11 +125,13 @@
                             <constraint firstItem="JG6-yq-S7y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xOI-B5-gaW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="emailTextfield" destination="NxN-Ir-PO3" id="kmQ-tR-Yud"/>
+                            <outlet property="passwordTextfield" destination="7Zd-10-XJx" id="AZ8-sY-evM"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="OKM-sG-kTJ"/>
                     <connections>
-                        <outlet property="emailTextField" destination="NxN-Ir-PO3" id="qlv-Qj-Js7"/>
-                        <outlet property="passwordTextField" destination="7Zd-10-XJx" id="NPz-8S-dq0"/>
                         <outlet property="velcomeImage" destination="WIH-xi-5Ol" id="qtp-DM-GUw"/>
                     </connections>
                 </viewController>
@@ -141,7 +143,7 @@
         <scene sceneID="e64-cn-Snv">
             <objects>
                 <viewController id="1qT-MO-8HR" customClass="RegistrationVC" customModule="personalNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QKM-3X-9ky">
+                    <view key="view" contentMode="scaleToFill" id="QKM-3X-9ky" customClass="ViewRegistration" customModule="personalNews" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -193,7 +195,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="1qT-MO-8HR" eventType="editingChanged" id="heu-ie-CYN"/>
+                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="KmI-eg-Ace"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-m8-iVm">
@@ -202,7 +204,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="1qT-MO-8HR" eventType="editingChanged" id="ojc-zw-uEx"/>
+                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="veD-87-Hk4"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G95-0L-ooB">
@@ -211,11 +213,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="1qT-MO-8HR" eventType="editingChanged" id="cjL-R2-VM2"/>
+                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="zee-DL-7fA"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password check :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR5-bO-NtV">
-                                                <rect key="frame" x="28" y="384" width="135.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password check:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR5-bO-NtV">
+                                                <rect key="frame" x="28" y="384" width="130.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -226,7 +228,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="1qT-MO-8HR" eventType="editingChanged" id="lDK-zk-1Op"/>
+                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="Obc-X9-dak"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYc-ss-oZd">
@@ -235,7 +237,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="1qT-MO-8HR" eventType="editingChanged" id="Bgb-ua-hAi"/>
+                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="1Z2-qJ-gla"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc5-Q7-ap1">
@@ -243,7 +245,7 @@
                                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Tc5-Q7-ap1" secondAttribute="height" multiplier="203:36" id="KhD-kV-LrC"/>
-                                                    <constraint firstAttribute="width" constant="203" id="UXN-uq-mb5"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="203" id="UXN-uq-mb5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Save"/>
@@ -318,13 +320,16 @@
                             <constraint firstItem="Xb0-MP-opj" firstAttribute="bottom" secondItem="OF1-Ai-TI7" secondAttribute="bottom" id="zux-xb-ybE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xb0-MP-opj"/>
+                        <connections>
+                            <outlet property="emailTextField" destination="Mhc-m8-iVm" id="9yp-pL-mYo"/>
+                            <outlet property="firstNameTextField" destination="IYc-ss-oZd" id="zUU-je-CmD"/>
+                            <outlet property="lastNameTextField" destination="fLz-cQ-7gi" id="bcd-2O-a2a"/>
+                            <outlet property="passwordTextField" destination="G95-0L-ooB" id="pRa-Uw-Zof"/>
+                            <outlet property="passwordcheckTextField" destination="5FS-HU-XwE" id="PLV-IM-VF0"/>
+                            <outlet property="scroolView" destination="OF1-Ai-TI7" id="bAf-uy-95D"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="addressField" destination="Mhc-m8-iVm" id="Y7X-qO-pmo"/>
-                        <outlet property="firstNameField" destination="IYc-ss-oZd" id="dyM-Qt-pxf"/>
-                        <outlet property="lastNameField" destination="fLz-cQ-7gi" id="IIH-VY-Cxg"/>
-                        <outlet property="passcheckField" destination="5FS-HU-XwE" id="ZR9-aR-J8Z"/>
-                        <outlet property="passwordField" destination="G95-0L-ooB" id="Wep-W5-TXF"/>
                         <outlet property="scroolView" destination="OF1-Ai-TI7" id="D30-z3-YXN"/>
                     </connections>
                 </viewController>
@@ -381,6 +386,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPT-e3-hJE">
                                                             <rect key="frame" x="86" y="5.5" width="278" height="70"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="CMS-5v-8rz"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="278" id="eOz-Zs-YkB"/>
                                                                 <constraint firstAttribute="height" constant="70" id="wYU-7a-JHS"/>
                                                             </constraints>
@@ -390,8 +396,8 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="WPT-e3-hJE" secondAttribute="trailing" constant="11" id="06w-jQ-O6q"/>
                                                         <constraint firstItem="cDA-Kg-mdT" firstAttribute="top" secondItem="YG1-rZ-hzo" secondAttribute="top" constant="5" id="27Z-8a-IPA"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="WPT-e3-hJE" secondAttribute="trailing" constant="8" id="H9z-Ho-UgQ"/>
                                                         <constraint firstItem="WPT-e3-hJE" firstAttribute="leading" secondItem="cDA-Kg-mdT" secondAttribute="trailing" constant="8" id="Odt-9l-ere"/>
                                                         <constraint firstItem="cDA-Kg-mdT" firstAttribute="leading" secondItem="YG1-rZ-hzo" secondAttribute="leading" constant="8" id="XmG-gT-CRb"/>
                                                         <constraint firstAttribute="bottom" secondItem="cDA-Kg-mdT" secondAttribute="bottom" constant="5" id="ZfH-5B-793"/>

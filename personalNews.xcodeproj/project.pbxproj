@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551A711621BDAFE5009E1106 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A711521BDAFE5009E1106 /* BasicView.swift */; };
+		551FF6A421C04A59002EE21C /* ViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FF6A321C04A59002EE21C /* ViewRegistration.swift */; };
 		55578D2F218F3BFF00378179 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55578D2E218F3BFF00378179 /* extentions.swift */; };
 		55578D31218F687300378179 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55578D30218F687300378179 /* RegistrationVC.swift */; };
 		556D56A3218CEE4600280FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D56A2218CEE4600280FE5 /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551A711521BDAFE5009E1106 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
+		551FF6A321C04A59002EE21C /* ViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRegistration.swift; sourceTree = "<group>"; };
 		55578D2E218F3BFF00378179 /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
 		55578D30218F687300378179 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		556D569F218CEE4600280FE5 /* personalNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = personalNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		551A711721BDB02C009E1106 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				551A711521BDAFE5009E1106 /* BasicView.swift */,
+				556D56B4218CF16F00280FE5 /* AlBasicViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		556D5696218CEE4600280FE5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,17 +75,26 @@
 		556D56A1218CEE4600280FE5 /* personalNews */ = {
 			isa = PBXGroup;
 			children = (
-				55578D2E218F3BFF00378179 /* extentions.swift */,
 				556D56A2218CEE4600280FE5 /* AppDelegate.swift */,
-				556D56B4218CF16F00280FE5 /* AlBasicViewController.swift */,
-				55578D30218F687300378179 /* RegistrationVC.swift */,
+				55578D2E218F3BFF00378179 /* extentions.swift */,
+				551A711721BDB02C009E1106 /* Main */,
+				5591087E21BF10C300285122 /* Registration */,
+				55AE0A732193863900702936 /* News */,
 				556D56A6218CEE4600280FE5 /* Main.storyboard */,
 				556D56A9218CEE4800280FE5 /* Assets.xcassets */,
-				55AE0A732193863900702936 /* News */,
 				556D56AB218CEE4800280FE5 /* LaunchScreen.storyboard */,
 				556D56AE218CEE4800280FE5 /* Info.plist */,
 			);
 			path = personalNews;
+			sourceTree = "<group>";
+		};
+		5591087E21BF10C300285122 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				55578D30218F687300378179 /* RegistrationVC.swift */,
+				551FF6A321C04A59002EE21C /* ViewRegistration.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		55AE0A732193863900702936 /* News */ = {
@@ -157,7 +179,9 @@
 			files = (
 				55578D2F218F3BFF00378179 /* extentions.swift in Sources */,
 				556D56B5218CF16F00280FE5 /* AlBasicViewController.swift in Sources */,
+				551A711621BDAFE5009E1106 /* BasicView.swift in Sources */,
 				556D56A3218CEE4600280FE5 /* AppDelegate.swift in Sources */,
+				551FF6A421C04A59002EE21C /* ViewRegistration.swift in Sources */,
 				55AE0A752193867E00702936 /* NewsCellTableController.swift in Sources */,
 				55FC3F2E2192404500D57A16 /* NewsViewController.swift in Sources */,
 				55578D31218F687300378179 /* RegistrationVC.swift in Sources */,

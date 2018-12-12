@@ -45,7 +45,7 @@ extension UIImageView {
     }
 }
 //-----------------
-let typemessage = ["Поле email не должно быть пустыми", "Поле password не должно быть пустыми", "Неправильный формат поля ввода адреса", "Пароль меньше 6 символов", " Поля password  и password check не совпадают"]
+let typemessage = ["Поле email не должно быть пустыми", "Поле password не должно быть пустыми", "Неправильный формат поля ввода адреса", "Пароль меньше 6 символов", " Поля password  и password check не совпадают", "Вы зарегестрированы, войдите в програму с Вашей учетной записью"]
 
 let typeMessageError = ["First Name", "Last Name", "Email address", "Password", "Password check"]
 
