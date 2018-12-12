@@ -25,7 +25,9 @@ class RegistrationVC: UIViewController {
         if err {
         let allertController = UIAlertController(title: "Error", message: nummessage, preferredStyle: UIAlertController.Style.alert)
         allertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
        viewRegField.changeFieldborger(numfield: numfield)
+            
         self.present(allertController, animated: true, completion: nil)
         } else {
             let allertController = UIAlertController(title: "Information", message: nummessage, preferredStyle: UIAlertController.Style.alert)
@@ -41,12 +43,12 @@ class RegistrationVC: UIViewController {
 // нажатие кнопки save
 // проверка на правильность введения информации
     @IBAction func saveButton(_ sender: UIButton) {
-        let kodError = viewRegField.checkFieldnotEmply()
+        let kodError = checkFieldnotEmply()
         if  kodError != 0 {
-            allertErrorTextField(err: true, nummessage: "Поле \(typeMessageError[kodError - 1]) не должно быть пустым", numfield: kodError)
+            allertErrorTextField(err: true, nummessage: "Поле \(typeMessageError[kodError - 1]) не должно быть пустым", numfield: kodError-1)
         } else {
           // проверить на правильность ввода информации
-            let trueInform = viewRegField.checkValidInform()
+            let trueInform = checkValidInform()
             if  trueInform != 0 {
                 allertErrorTextField(err: true, nummessage: typemessage[trueInform], numfield: trueInform)
             } else {

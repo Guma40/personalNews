@@ -33,13 +33,12 @@ class AlBasicViewController: UIViewController {
     
     // MARK: - Navigation
     
-    
 // сообщение об ошибке ввода
     func allertMessage(nummessage: Int) {
         let allertController = UIAlertController(title: "Error", message: typemessage[nummessage], preferredStyle: UIAlertController.Style.alert)
         allertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
-        viewtextField.changeFieldborger(numfield: nummessage)
+        viewtextField.changeFieldborger(numfield: nummessage-2)
         
         self.present(allertController, animated: true, completion: nil)
         return
@@ -50,11 +49,11 @@ class AlBasicViewController: UIViewController {
 // если все ОК - переход на главную страницу
     @IBAction func enterOkButton(_ sender: Any) {
     
-        if !(viewtextField.verifyEmail()) {
+        if !(verifyEmail(index: 0)) {
             allertMessage(nummessage: 2)
             return
         }
-        if !(viewtextField.verifyPass()) {
+        if !(verifyPass(index: 1)) {
             allertMessage(nummessage: 3)
             return
         }

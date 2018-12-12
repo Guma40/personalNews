@@ -12,8 +12,8 @@ class NewsCellTableController: UITableViewCell {
 
     @IBOutlet weak var headlineNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
-   
     
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

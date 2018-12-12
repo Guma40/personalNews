@@ -12,9 +12,12 @@ import UIKit
 
 //расширение для строки ввода - изменение цвета бордюра
 extension UITextField{
-    func setBorderColor(width:CGFloat,color:UIColor) -> Void{
+    func setBorderColor(width:CGFloat,color:UIColor, setCursor: Bool) -> Void{
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = width
+            if setCursor {
+                self.becomeFirstResponder()
+            }
     }
 }
 
@@ -44,7 +47,42 @@ extension UIImageView {
         return
     }
 }
-//-----------------
+//функции проверки условий -------------
+// проверить правильность ввода адреса
+func verifyEmail(index: Int) -> Bool {
+    return  !(massFieldmain[index].text?.isValidEmail())! ? false : true
+}
+// длинна пароля
+func verifyPass(index: Int) -> Bool {
+    return (massFieldmain[index].text?.count)! < passLength ? false : true
+}
+
+// проверка правильности ввода
+func checkValidInform() ->Int {
+    if  !verifyEmail(index: 2) {
+        return 2
+    } else if !verifyPass(index: 3) {
+        return 3
+    } else if (massFieldmain[3].text)! != (massFieldmain[4].text)! {
+        return 4
+    } else {
+        return 0
+    }
+}
+// проверка на пустые строки
+func checkFieldnotEmply() -> Int {
+    for field in massFieldmain {
+        if (field.text)!.isEmpty {
+            return field.tag
+        }
+    }
+    return 0
+}
+
+
+//--- var & let --------------
+var massFieldmain: [UITextField] = []
+
 let typemessage = ["Поле email не должно быть пустыми", "Поле password не должно быть пустыми", "Неправильный формат поля ввода адреса", "Пароль меньше 6 символов", " Поля password  и password check не совпадают", "Вы зарегестрированы, войдите в програму с Вашей учетной записью"]
 
 let typeMessageError = ["First Name", "Last Name", "Email address", "Password", "Password check"]

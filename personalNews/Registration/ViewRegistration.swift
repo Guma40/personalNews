@@ -9,9 +9,7 @@
 import UIKit
 
 protocol viewRegistrationProtocol {
-     func checkFieldnotEmply() -> Int
-     func checkValidInform() ->Int
-     func changeFieldborger(numfield: Int) 
+     func changeFieldborger(numfield: Int)
 }
 
 
@@ -26,7 +24,7 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordcheckTextField: UITextField!
     
-    var massField: [UITextField] = []
+
     
 // - - - - - - - - - - - - - - -
     override func awakeFromNib() {
@@ -38,11 +36,15 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
         
         newKeyboardNotification()
         
-        massField.append(firstNameTextField)
-        massField.append(lastNameTextField)
-        massField.append(emailTextField)
-        massField.append(passwordTextField)
-        massField.append(passwordcheckTextField)
+        if massFieldmain.count > 0 {
+                massFieldmain.removeAll()
+        }
+            massFieldmain.append(firstNameTextField)
+            massFieldmain.append(lastNameTextField)
+            massFieldmain.append(emailTextField)
+            massFieldmain.append(passwordTextField)
+            massFieldmain.append(passwordcheckTextField)
+        
     }
     
     deinit {
@@ -91,40 +93,12 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
 
 // при ошибке - цвет бордюра - красный
     func changeFieldborger(numfield: Int) {
-        massField[numfield-1].setBorderColor(width: 2.0, color: .red)
-        massField[numfield-1].becomeFirstResponder()
-    }
-    
+        massFieldmain[numfield].setBorderColor(width: 2.0, color: .red, setCursor: true)
+    }    
     
 //  при редактировании - цвет бордюра в исх.
     @IBAction func editTextField(_ sender: UITextField) {
-        sender.setBorderColor(width: 1.0, color: .gray)
+        sender.setBorderColor(width: 1.0, color: .gray, setCursor: false)
         return
-    }
-
-// проверка на пустые строки
-    func checkFieldnotEmply() -> Int {
-        for field in massField {
-            if (field.text)!.isEmpty {
-                return field.tag
-            }
-        }
-        return 0
-    }
-    
-// проверка правильности ввода
-    func checkValidInform() ->Int {
-        if !(massField[2].text?.isValidEmail())! {
-            return 2
-        } else if (massField[3].text?.count)! < passLength {
-            return 3
-        } else if (massField[3].text)! != (massField[4].text)! {
-            return 4
-        } else {
-            return 0
-        }
-    }
-    
-
-    
+    }    
 }
