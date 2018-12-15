@@ -10,11 +10,15 @@ import UIKit
 
 protocol TextFieldProtocol {
     func changeFieldborger(numfield: Int)
+    var email: String {get set}
+    var password: String {get set}
 }
 
 class BasicView: UIView, UITextFieldDelegate, TextFieldProtocol {
    
-
+    var password: String = ""
+    var email: String = ""
+    
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
@@ -26,9 +30,8 @@ class BasicView: UIView, UITextFieldDelegate, TextFieldProtocol {
         if massFieldmain.count > 0 {
                 massFieldmain.removeAll()
         }
-                massFieldmain.append(emailTextfield)
-                massFieldmain.append(passwordTextfield)
-        
+        massFieldmain.append(emailTextfield)
+        massFieldmain.append(passwordTextfield)
     }
     
 // убрать выделение при вводе текста

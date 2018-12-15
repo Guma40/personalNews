@@ -15,6 +15,9 @@ class RegistrationVC: UIViewController {
     var viewRegField : viewRegistrationProtocol {
             return self.view as! ViewRegistration }
     
+    var kodError = 0
+    
+    
 // - - - - - - - - -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +46,22 @@ class RegistrationVC: UIViewController {
 // нажатие кнопки save
 // проверка на правильность введения информации
     @IBAction func saveButton(_ sender: UIButton) {
-        let kodError = checkFieldnotEmply()
+        kodError = checkFieldnotEmply()
         if  kodError != 0 {
             allertErrorTextField(err: true, nummessage: "Поле \(typeMessageError[kodError - 1]) не должно быть пустым", numfield: kodError-1)
         } else {
           // проверить на правильность ввода информации
-            let trueInform = checkValidInform()
-            if  trueInform != 0 {
-                allertErrorTextField(err: true, nummessage: typemessage[trueInform], numfield: trueInform)
+            kodError = checkValidInform()
+            if  kodError != 0 {
+                allertErrorTextField(err: true, nummessage: typemessage[kodError], numfield: kodError)
             } else {
-              allertErrorTextField(err: false, nummessage: typemessage[5], numfield: 0)
+              //открыть окно с подвтерждением регистрации
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let windowsOkVC = mainStoryboard.instantiateViewController(withIdentifier: "windowsOk") as! windowOkController
+                self.present(windowsOkVC, animated:true, completion:nil)
             }
         }
         return
     }
     
-
 }

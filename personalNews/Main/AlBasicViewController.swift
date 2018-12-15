@@ -60,7 +60,11 @@ class AlBasicViewController: UIViewController {
         return
    }
     
-
+// точка возврата с окна Ok registr
+    @IBAction func returnOkWindow(segue: UIStoryboardSegue) {
+        
+        
+    }
 }
 
 

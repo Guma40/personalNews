@@ -17,6 +17,7 @@
 		556D56AD218CEE4800280FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556D56AB218CEE4800280FE5 /* LaunchScreen.storyboard */; };
 		556D56B5218CF16F00280FE5 /* AlBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D56B4218CF16F00280FE5 /* AlBasicViewController.swift */; };
 		55AE0A752193867E00702936 /* NewsCellTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE0A742193867E00702936 /* NewsCellTableController.swift */; };
+		55C36EE321C449D000AF21E3 /* windowOkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C36EE221C449D000AF21E3 /* windowOkController.swift */; };
 		55FC3F2E2192404500D57A16 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC3F2D2192404500D57A16 /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		556D56AE218CEE4800280FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556D56B4218CF16F00280FE5 /* AlBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlBasicViewController.swift; sourceTree = "<group>"; };
 		55AE0A742193867E00702936 /* NewsCellTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellTableController.swift; sourceTree = "<group>"; };
+		55C36EE221C449D000AF21E3 /* windowOkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = windowOkController.swift; sourceTree = "<group>"; };
 		55FC3F2D2192404500D57A16 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			children = (
 				55578D30218F687300378179 /* RegistrationVC.swift */,
 				551FF6A321C04A59002EE21C /* ViewRegistration.swift */,
+				55C36EE221C449D000AF21E3 /* windowOkController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C36EE321C449D000AF21E3 /* windowOkController.swift in Sources */,
 				55578D2F218F3BFF00378179 /* extentions.swift in Sources */,
 				556D56B5218CF16F00280FE5 /* AlBasicViewController.swift in Sources */,
 				551A711621BDAFE5009E1106 /* BasicView.swift in Sources */,
