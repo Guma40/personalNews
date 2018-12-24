@@ -195,7 +195,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="KmI-eg-Ace"/>
+                                                    <action selector="changeBorderColorTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="MNg-wM-MwW"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-m8-iVm">
@@ -204,7 +204,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="veD-87-Hk4"/>
+                                                    <action selector="changeBorderColorTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="qgm-hp-aOy"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G95-0L-ooB">
@@ -213,7 +213,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="zee-DL-7fA"/>
+                                                    <action selector="changeBorderColorTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="iyW-yI-wUc"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password check:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR5-bO-NtV">
@@ -228,7 +228,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="Obc-X9-dak"/>
+                                                    <action selector="changeBorderColorTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="Nnj-Uh-nXd"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYc-ss-oZd">
@@ -237,7 +237,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="editTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="1Z2-qJ-gla"/>
+                                                    <action selector="changeBorderColorTextField:" destination="QKM-3X-9ky" eventType="editingChanged" id="Ltq-ls-bPz"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc5-Q7-ap1">

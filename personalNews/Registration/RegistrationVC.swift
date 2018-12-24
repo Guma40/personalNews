@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RegistrationVC: UIViewController {
+class RegistrationVC: BaseViewController {
 
     @IBOutlet weak var scroolView: UIScrollView!
     
-    var viewRegField : viewRegistrationProtocol {
+    var viewRegField : TextFieldProtocol {
             return self.view as! ViewRegistration }
     
     var kodError = 0
@@ -23,44 +23,41 @@ class RegistrationVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
     }
-// сообщение об ошибке ввода
-    func allertErrorTextField(err: Bool, nummessage: String, numfield: Int) {
-        if err {
-        let allertController = UIAlertController(title: "Error", message: nummessage, preferredStyle: UIAlertController.Style.alert)
-        allertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            
-       viewRegField.changeFieldborger(numfield: numfield)
-            
-        self.present(allertController, animated: true, completion: nil)
-        } else {
-            let allertController = UIAlertController(title: "Information", message: nummessage, preferredStyle: UIAlertController.Style.alert)
-            //закрыть окно по нажатию ОК
-            allertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default){(action: UIAlertAction!) -> Void in
-                self.navigationController?.popViewController(animated: true)
-                self.dismiss(animated: true, completion: nil)})
-            self.present(allertController, animated: true, completion: nil)
-        }
-        return
+    
+ //вызов окна с указанием ошибки и изм. цвета бордюра
+    func visibleWindowAlert(_ kod: Int, typeMes: Bool, _ fieldnum: Int) {
+        allertMessage(kod, err: typeMes)
+        viewRegField.changeFieldborger(numfield: fieldnum)
+      return
     }
     
 // нажатие кнопки save
 // проверка на правильность введения информации
     @IBAction func saveButton(_ sender: UIButton) {
-        kodError = checkFieldnotEmply()
-        if  kodError != 0 {
-            allertErrorTextField(err: true, nummessage: "Поле \(typeMessageError[kodError - 1]) не должно быть пустым", numfield: kodError-1)
-        } else {
-          // проверить на правильность ввода информации
-            kodError = checkValidInform()
-            if  kodError != 0 {
-                allertErrorTextField(err: true, nummessage: typemessage[kodError], numfield: kodError)
-            } else {
-              //открыть окно с подвтерждением регистрации
+        kodError = viewRegField.massFieldmain.checkFieldnotEmply()
+        if  kodError != 0 {    //пустые строки
+            visibleWindowAlert(kodError-1, typeMes: false, kodError-1)
+            return
+        }
+        if  !InputAnalizerManeger.analizeInputText((viewRegField.massFieldmain[2].text)!, type: .email) {
+            visibleWindowAlert(0, typeMes: true, 2)
+            return
+        }
+        if !InputAnalizerManeger.analizeInputText((viewRegField.massFieldmain[3].text)!, type: .pass) {
+            visibleWindowAlert(1, typeMes: true, 3)
+            return
+        }
+        if !InputAnalizerManeger.comparePass((viewRegField.massFieldmain[3].text)!, viewRegField.massFieldmain[4].text!) {
+            visibleWindowAlert(2, typeMes: true, 4)
+            return
+
+        }
+        
+        //открыть окно с подвтерждением регистрации
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let windowsOkVC = mainStoryboard.instantiateViewController(withIdentifier: "windowsOk") as! windowOkController
                 self.present(windowsOkVC, animated:true, completion:nil)
-            }
-        }
+    
         return
     }
     

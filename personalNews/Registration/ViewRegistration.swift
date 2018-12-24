@@ -8,12 +8,8 @@
 
 import UIKit
 
-protocol viewRegistrationProtocol {
-     func changeFieldborger(numfield: Int)
-}
 
-
-class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
+class ViewRegistration: FirstView, UITextFieldDelegate {
     
 
     @IBOutlet weak var scroolView: UIScrollView!
@@ -28,6 +24,9 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
     
 // - - - - - - - - - - - - - - -
     override func awakeFromNib() {
+        
+        super .awakeFromNib()
+        
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         emailTextField.delegate = self
@@ -36,14 +35,11 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
         
         newKeyboardNotification()
         
-        if massFieldmain.count > 0 {
-                massFieldmain.removeAll()
-        }
-            massFieldmain.append(firstNameTextField)
-            massFieldmain.append(lastNameTextField)
-            massFieldmain.append(emailTextField)
-            massFieldmain.append(passwordTextField)
-            massFieldmain.append(passwordcheckTextField)
+        massFieldmain.append(firstNameTextField)
+        massFieldmain.append(lastNameTextField)
+        massFieldmain.append(emailTextField)
+        massFieldmain.append(passwordTextField)
+        massFieldmain.append(passwordcheckTextField)
         
     }
     
@@ -90,15 +86,4 @@ class ViewRegistration: UIView, UITextFieldDelegate, viewRegistrationProtocol {
         }
         return true
     }
-
-// при ошибке - цвет бордюра - красный
-    func changeFieldborger(numfield: Int) {
-        massFieldmain[numfield].setBorderColor(width: 2.0, color: .red, setCursor: true)
-    }    
-    
-//  при редактировании - цвет бордюра в исх.
-    @IBAction func editTextField(_ sender: UITextField) {
-        sender.setBorderColor(width: 1.0, color: .gray, setCursor: false)
-        return
-    }    
 }

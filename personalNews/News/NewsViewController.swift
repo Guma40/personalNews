@@ -10,6 +10,8 @@ import UIKit
 
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    let image_to_news = ["1-5.jpg", "3-5.jpg", "70-5.jpg", "75-5.jpg", "154-5.jpg", "176-5.jpg", "tmp-1.jpg", "tmp-2.jpg", "tmp-5.jpg", "tmp-7.jpg"]
+
     var numpage: Int = 0
     
     @IBOutlet weak var switchNews: UISegmentedControl!

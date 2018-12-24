@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AlBasicViewController: UIViewController {
+class AlBasicViewController: BaseViewController {
     
     @IBOutlet weak var velcomeImage: UIImageView!
     
@@ -33,38 +33,27 @@ class AlBasicViewController: UIViewController {
     
     // MARK: - Navigation
     
-// сообщение об ошибке ввода
-    func allertMessage(nummessage: Int) {
-        let allertController = UIAlertController(title: "Error", message: typemessage[nummessage], preferredStyle: UIAlertController.Style.alert)
-        allertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        viewtextField.changeFieldborger(numfield: nummessage-2)
-        
-        self.present(allertController, animated: true, completion: nil)
-        return
-    }
     
 // кнопка Ок
 // проверка условий заполнения полей
 // если все ОК - переход на главную страницу
     @IBAction func enterOkButton(_ sender: Any) {
     
-        if !(verifyEmail(index: 0)) {
-            allertMessage(nummessage: 2)
+        if  !InputAnalizerManeger.analizeInputText((viewtextField.massFieldmain[0].text)!, type: .email) {
+            allertMessage(0, err: false)
+            viewtextField.changeFieldborger(numfield: 0)
             return
         }
-        if !(verifyPass(index: 1)) {
-            allertMessage(nummessage: 3)
+        if !InputAnalizerManeger.analizeInputText((viewtextField.massFieldmain[1].text)!, type: .pass) {
+            allertMessage(1, err: false)
+            viewtextField.changeFieldborger(numfield: 1)
             return
         }
-        return
    }
     
 // точка возврата с окна Ok registr
     @IBAction func returnOkWindow(segue: UIStoryboardSegue) {
-        
-        
+
     }
 }
-
 
